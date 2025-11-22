@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WI Design Projetos e Construcoes Ltda - Leading nonresidential building construction and engineering in Volta Redonda, RJ. Led by Wiliton Jose De Oliveira.">
+    <title>WI DESIGN | Projetos e Construções</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           1. VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-steel: #2c3e50;       /* Dark Steel Blue */
+            --accent-orange: #e67e22;       /* Construction Safety Orange */
+            --concrete-light: #ecf0f1;      /* Concrete White */
+            --text-dark: #34495e;
+            --white: #ffffff;
+            --container-width: 1150px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Archivo', sans-serif;
+            color: var(--primary-steel);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header span {
+            display: block;
+            color: var(--accent-orange);
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            font-family: 'Archivo', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--accent-orange);
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-orange);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-steel);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-family: 'Archivo', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-steel);
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--primary-steel);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.7)),
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Construction Site */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            margin-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #bdc3c7;
+            font-weight: 300;
+            border-left: 5px solid var(--accent-orange);
+            padding-left: 25px;
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .principal-card {
+            margin-top: 30px;
+            background: var(--concrete-light);
+            padding: 25px;
+            border-left: 5px solid var(--primary-steel);
+        }
+
+        .principal-card h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            border-radius: 4px;
+            box-shadow: 20px 20px 0 var(--accent-orange);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            background-color: var(--concrete-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 30px;
+            border-bottom: 4px solid transparent;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .service-card:hover {
+            border-bottom-color: var(--accent-orange);
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-steel);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            background-color: var(--primary-steel);
+            color: var(--white);
+        }
+
+        .advantages .section-header h2 { color: var(--white); }
+        .advantages .section-header span { color: var(--accent-orange); }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .adv-item {
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .adv-item h4 {
+            color: var(--accent-orange);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .adv-item p {
+            color: #bdc3c7;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            background-color: var(--white);
+        }
+
+        .process-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--concrete-light);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            background: var(--white);
+            padding: 0 20px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--primary-steel);
+            color: var(--primary-steel);
+            font-size: 1.5rem;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 0 10px var(--white);
+        }
+
+        /* =========================================
+           9. CONTACT FORM
+           ========================================= */
+        .contact {
+            background-color: var(--concrete-light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: var(--white);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            background-color: var(--primary-steel);
+            color: var(--white);
+            padding: 60px;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .info-block {
+            margin-bottom: 30px;
+        }
+
+        .info-block label {
+            display: block;
+            color: var(--accent-orange);
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #dfe6e9;
+            background: #fdfdfd;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-orange);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background-color: #1e272e;
+            color: #7f8c8d;
+            padding: 60px 0 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-brand {
+            font-family: 'Archivo', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 800;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3rem; }
+            .about-grid, .services-grid, .adv-grid, .contact-wrapper { grid-template-columns: 1fr; }
+            .process-wrapper { flex-direction: column; gap: 40px; }
+            .process-wrapper::before { display: none; }
+            .step { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">WI <span>DESIGN</span></div>
+            <nav class="nav-links">
+                <a href="#about">Company</a>
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Building Industry.<br>Designing Progress.</h1>
+            <p>WI Design Projetos e Construcoes Ltda is your partner for nonresidential construction in Volta Redonda. We combine robust engineering with precise design execution.</p>
+            <a href="#contact" class="btn btn-outline">Start Your Build</a>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="section-header" style="text-align: left; margin: 0 0 30px 0;">
+                        <span>About WI Design</span>
+                        <h2>Construction with Integrity</h2>
+                    </div>
+                    <p>Based in the industrial hub of Volta Redonda, Rio de Janeiro, WI Design Projetos e Construcoes Ltda specializes in the nonresidential building sector. We understand that commercial and industrial facilities require a unique blend of durability, functionality, and compliance.</p>
+                    <p>Under the leadership of Wiliton Jose De Oliveira, our firm bridges the gap between technical "Projetos" (Design) and on-site "Construcoes" (Construction). We eliminate communication barriers by managing the entire lifecycle of the build.</p>
+                    <p>Whether it's a large-scale warehouse or a complex commercial retrofit, our team brings engineering rigor and safety consciousness to every square meter.</p>
+                    
+                    <div class="principal-card">
+                        <h4>Wiliton Jose De Oliveira</h4>
+                        <p style="margin:0; font-size: 0.9rem; color: #7f8c8d;">Key Principal & Director</p>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Construction Site">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Capabilities</span>
+                <h2>Core Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box">&#9874;</div> <h3>Industrial Construction</h3>
+                    <p>Execution of heavy-duty facilities including factories, warehouses, and logistics centers. We prioritize structural integrity and operational efficiency in every build.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">&#128208;</div> <h3>Technical Design</h3>
+                    <p>Comprehensive engineering planning. We provide structural calculations, CAD drawings, and architectural layouts that ensure your project is viable and compliant.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">&#127970;</div> <h3>Commercial Development</h3>
+                    <p>Construction of retail spaces and office complexes. We manage the build from foundation to finish, delivering turnkey solutions for businesses in Rio de Janeiro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span style="color: var(--accent-orange);">Why Choose Us</span>
+                <h2 style="color: var(--white);">The WI Standard</h2>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <h4>Safety First</h4>
+                    <p>We strictly adhere to Brazilian safety regulations (NRs). Our construction sites are managed with rigorous protocols to protect personnel and assets.</p>
+                </div>
+                <div class="adv-item">
+                    <h4>Local Logistics</h4>
+                    <p>Operating from Volta Redonda, we have established supply chains and labor networks across Rio de Janeiro, ensuring efficient project delivery.</p>
+                </div>
+                <div class="adv-item">
+                    <h4>Integrated Approach</h4>
+                    <p>By handling both design and construction, we reduce errors and delays. Our team ensures that the blueprint matches the built reality perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Workflow</span>
+                <h2>From Concept to Concrete</h2>
+            </div>
+            <div class="process-wrapper">
+                <div class="step">
+                    <div class="step-icon">&#128202;</div>
+                    <h3>Analysis</h3>
+                    <p>We assess the site in Volta Redonda and define the technical scope required for your nonresidential project.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">&#9998;</div>
+                    <h3>Engineering</h3>
+                    <p>Our team develops detailed plans and secures necessary permits, preparing the ground for construction.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">&#128736;</div>
+                    <h3>Construction</h3>
+                    <p>We execute the build with precision management, ensuring quality control through to final delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Start Your Build</h3>
+                    <p style="color: #bdc3c7; margin-bottom: 30px;">Ready to break ground on your industrial or commercial project? Contact WI DESIGN today.</p>
+                    
+                    <div class="info-block">
+                        <label>Headquarters</label>
+                        Volta Redonda, Rio de Janeiro<br>Brazil
+                    </div>
+                    <div class="info-block">
+                        <label>Email</label>
+                        info@designprojetosconstrucoes.info
+                    </div>
+                    <div class="info-block">
+                        <label>Principal</label>
+                        Wiliton Jose De Oliveira
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Project Type (e.g. Warehouse)">
+                        </div>
+                        <div class="form-group">
